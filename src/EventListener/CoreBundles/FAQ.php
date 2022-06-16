@@ -69,8 +69,10 @@ class FAQ //extends ModuleFaqList
             return [];
         }
 
-        $Faq = FaqModel::findByAlias(Input::get('items'));
-        return $Faq->glossar;
+        if($Faq = FaqModel::findByAlias(Input::get('items'))){
+            return $Faq->glossar;
+        }
+        return false;
     }
 
     public function updateCache($item, $arrTerms, $strContent)
