@@ -65,8 +65,11 @@ class News //extends BaseNews
             return [];
         }
 
-        $News = NewsModel::findByIdOrAlias(Input::get('items'));
-        return $News->glossar;
+        if($News = NewsModel::findByIdOrAlias(Input::get('items'))){
+            return $News->glossar;
+        }
+        
+        return false;
     }
 
     public function updateCache($item, $arrTerms, $strContent)
