@@ -231,7 +231,7 @@ $GLOBALS['TL_DCA']['tl_glossar'] = [
 			'eval'					=> ['maxlength' => 255, 'tl_class' => 'long clr', 'gsIgnore' => true],
 		],
 		'canonicalType' => [
-			'label'                   => !empty($GLOBALS['TL_LANG']['RelCanonical']['canonicalType']) ? $GLOBALS['TL_LANG']['RelCanonical']['canonicalType'] : $GLOBALS['TL_LANG']['tl_glossar']['canonicalType'],
+			'label'                   => !empty($GLOBALS['TL_LANG']['RelCanonical']['canonicalType'] ?? null) ? $GLOBALS['TL_LANG']['RelCanonical']['canonicalType'] ?? null : $GLOBALS['TL_LANG']['tl_glossar']['canonicalType'] ?? null,
 			'default'                 => 'donotset',
 			'exclude'                 => true,
 			'inputType'               => 'select',
@@ -240,7 +240,7 @@ $GLOBALS['TL_DCA']['tl_glossar'] = [
 			'eval'                    => ['submitOnChange'=>true, 'tl_class'=>'w50 clr'],
 		],
 		'canonicalJumpTo' => [
-			'label'                   => !empty($GLOBALS['TL_LANG']['RelCanonical']['canonicalJumpTo']) ? $GLOBALS['TL_LANG']['RelCanonical']['canonicalJumpTo'] : $GLOBALS['TL_LANG']['tl_glossar']['canonicalJumpTo'],
+			'label'                   => !empty($GLOBALS['TL_LANG']['RelCanonical']['canonicalJumpTo'] ?? null) ? $GLOBALS['TL_LANG']['RelCanonical']['canonicalJumpTo'] ?? null : $GLOBALS['TL_LANG']['tl_glossar']['canonicalJumpTo'] ?? null,
 			'exclude'                 => true,
 			'inputType'               => 'pageTree',
 			'eval'                    => ['fieldType'=>'radio', 'tl_class'=>'w50 clr'],
@@ -249,7 +249,7 @@ $GLOBALS['TL_DCA']['tl_glossar'] = [
 			]
 		],
 		'canonicalWebsite'  => [
-			'label'                 => !empty($GLOBALS['TL_LANG']['RelCanonical']['canonicalWebsite']) ? $GLOBALS['TL_LANG']['RelCanonical']['canonicalWebsite'] : $GLOBALS['TL_LANG']['tl_glossar']['canonicalWebsite'],
+			'label'                 => !empty($GLOBALS['TL_LANG']['RelCanonical']['canonicalWebsite'] ?? null) ? $GLOBALS['TL_LANG']['RelCanonical']['canonicalWebsite'] ?? null : $GLOBALS['TL_LANG']['tl_glossar']['canonicalWebsite'] ?? null,
 			'exclude'               => true,
 			'inputType'             => 'text',
 			'eval'                  => ['rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'tl_class'=>'clr long'],
