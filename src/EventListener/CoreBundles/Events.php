@@ -68,8 +68,10 @@ class Events
             return [];
         }
 
-        $Event = CalendarEventsModel::findByAlias(Input::get('items'));
-        return $Event->glossar;
+        if($Event = CalendarEventsModel::findByAlias(Input::get('items'))){
+            return $Event->glossar;
+        }
+        return false;
     }
 
     public function updateCache($item, $arrTerms, $strContent)
