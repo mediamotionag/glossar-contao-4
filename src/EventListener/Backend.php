@@ -63,6 +63,9 @@ class Backend
 
     public function getSearchablePages($arrPages, $intRoot = 0, $blnIsSitemap = false)
     {
+        // Disable, because glossar detailpages are not active
+        return $arrPages;
+
         $TermsRepository = $this->entityManager->getRepository(TermsEntity::class);
         $objTerms = $TermsRepository->findAll();
 
